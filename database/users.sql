@@ -1,0 +1,9 @@
+CREATE TABLE users (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name TEXT NOT NULL,
+	email TEXT NOT NULL DEFAULT("example@example.com"),
+	password TEXT NOT NULL,
+	devices TEXT NOT NULL DEFAULT("http://127.0.0.1:80/ http://127.0.0.1:8080/"),
+	balance DEC(14, 2) NOT NULL DEFAULT(0.00),
+	currency VARCHAR(8) NOT NULL DEFAULT("USD")
+);
