@@ -4,7 +4,7 @@ import { config } from "dotenv"
 config()
 
 const pool = mysql2.createPool({
-	database: process.env.DB || "db",
+	database: process.env.DB || "finanzas_ts",
 	host: process.env.DB_HOST || "127.0.0.1",
 	port: Number(process.env.DB_PORT) || 3306,
 	user: process.env.DB_USER || "user",
@@ -15,7 +15,6 @@ async function connect(){
 		if(!pool){
 			throw new Error("[ERROR] Couldn't stablish a connection with the database server.")
 		}
-
 		if(!(await pool.getConnection())){
 			throw new Error("[ERROR] Couldn't stablish a connection with the database server.")
 		}
